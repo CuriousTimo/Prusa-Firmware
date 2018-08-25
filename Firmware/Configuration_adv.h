@@ -271,7 +271,8 @@
   #define BABYSTEP_Z_MULTIPLICATOR 2 //faster z movements
 
   #ifdef COREXY
-    #error BABYSTEPPING not implemented for COREXY yet.
+    // BABYSTEPPING only implemented for Z axis on CoreXY.
+    #undef BABYSTEP_XY
   #endif
 #endif
 
