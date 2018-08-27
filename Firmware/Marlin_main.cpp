@@ -6995,7 +6995,7 @@ void ClearToSend()
 		SERIAL_PROTOCOLLNRPGM(_T(MSG_OK));
 }
 
-#if MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3 || MOTHERBOARD == BOARD_RAMPS_1_4
+#if MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3
 void update_currents() {
 	float current_high[3] = DEFAULT_PWM_MOTOR_CURRENT_LOUD;
 	float current_low[3] = DEFAULT_PWM_MOTOR_CURRENT;
@@ -7032,7 +7032,7 @@ void update_currents() {
 		}
 	}
 }
-#endif //MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3 || MOTHERBOARD == BOARD_RAMPS_1_4
+#endif //MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3
 
 void get_coordinates()
 {
@@ -7055,9 +7055,9 @@ void get_coordinates()
       if (relative)
         destination[i] += current_position[i];
       seen[i]=true;
-#if MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3 || MOTHERBOARD == BOARD_RAMPS_1_4
+#if MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3
 	  if (i == Z_AXIS && SilentModeMenu == SILENT_MODE_AUTO) update_currents();
-#endif //MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3 || MOTHERBOARD == BOARD_RAMPS_1_4
+#endif //MOTHERBOARD == BOARD_RAMBO_MINI_1_0 || MOTHERBOARD == BOARD_RAMBO_MINI_1_3
     }
     else destination[i] = current_position[i]; //Are these else lines really needed?
   }
